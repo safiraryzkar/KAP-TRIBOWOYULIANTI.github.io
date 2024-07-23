@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleJ.css" />
+  <!-- Menggunakan Font Awesome untuk ikon hamburger menu -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    /* Popup Overlay */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Popup Box */
+    .popup {
+      font-family: "Jost", Helvetica;
+      font-weight: 300;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      font-size: 20px;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 800px;
+      max-height: 60vh; /* Maksimum tinggi popup */
+      overflow-y: auto; /* Tambahkan scroll jika konten terlalu panjang */
+      text-align: justify;
+      line-height: 25px;
+      padding-top: 40px; /* Padding tambahan untuk ruang dari tombol tutup */
+  }
+
+    .popup .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #333;
+    }
+    .popup-trigger {
+      text-decoration: underline; /* Menambahkan garis bawah pada teks */
+      cursor: pointer; /* Mengubah kursor menjadi pointer untuk menunjukkan bahwa teks tersebut dapat diklik */
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img class="KAP-TBY-logo-kop" src="img/kap-tby-logo-kop-surat-1.png" alt="KAP Tri Bowo Yulianti Logo" />
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="menu-item">Beranda</a>
+      <a href="about.html" class="menu-item">Tentang Kami</a>
+      <a href="partner.html" class="menu-item">Partner</a>
+      <a href="jasa.html" class="menu-item">Jasa</a>
+      <a href="klien.html" class="menu-item">Klien</a>
+      <a href="index.html#contact-section" class="menu-item">Kontak Kami</a>
+    </nav>
+    <!-- Icon hamburger menu -->
+    <div class="icon" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </div>
+  </header>
+
+  <script>
+    // Script untuk mengaktifkan menu responsif saat di layar kecil
+    function toggleMenu() {
+      var navbar = document.getElementById("navbar");
+      if (navbar.className === "navbar") {
+        navbar.className += " responsive";
+      } else {
+        navbar.className = "navbar";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const popupOverlay = document.getElementById('popupOverlay');
+      const popupContent = document.getElementById('popupContent');
+      const closePopup = document.getElementById('closePopup');
+
+      // Function to open the popup with specific content
+      function openPopup(content) {
+        popupContent.innerHTML = content;
+        popupOverlay.style.display = 'block';
+      }
+
+      // Function to close the popup
+      function closePopupFunc() {
+        popupOverlay.style.display = 'none';
+      }
+
+      // Event listeners for popup triggers
+      document.querySelectorAll('.popup-trigger').forEach(trigger => {
+        trigger.addEventListener('click', function () {
+          const content = this.getAttribute('data-popup-content');
+          openPopup(content);
+        });
+      });
+
+      // Close the popup when the close button is clicked
+      closePopup.addEventListener('click', closePopupFunc);
+
+      // Close the popup when clicking outside the popup content
+      popupOverlay.addEventListener('click', function (event) {
+        if (event.target === popupOverlay) {
+          closePopupFunc();
+        }
+      });
+    });
+  </script>
+
+  <div class="partner">
+    <div class="div">
+      <div class="section">
+        <div class="klien-wrapper">
+          <div class="text-wrapper-5">Klien Kami</div>
+        </div>
+        <p class="text-klien">Klien yang sudah kami tangani</p>
+      </div>
+      <div class="klien">
+        <div class="frame2">
+          <img class="imageK2" src="img/image-10.png" />
+          <div class="text-wrapper-AK2">Dana Pensiun</div>
+          <a href="#" class="text-wrapper-SK2 popup-trigger" data-popup-content="
+          1. Dana Pensiun Kaltim Prima Coal, Sangatta – Kutai Timur.<br>
+          2. Dana Pensiun Indorama Synthetics, Purwakarta.<br>
+          3. Dana Pensiun Mandom Indonesia, Jakarta.<br>
+          4. Dana Pensiun Pegawai PT Bank Sumut, Medan.<br>
+          5. Dana Pensiun BPD Kalimantan Barat, Pontianak.<br>
+          6. Dana Pensiun Program Iuran Pasti Krama Yudha Ratu Motor, Jakarta.<br>
+          7. Dana Pensiun Krama Yudha Ratu Motor, Jakarta.<br>
+          8. Dana Pensiun Karyawan Mobil Oil Indonesia Inc., Jakarta.<br>
+          9. Dana Pensiun Danareksa, Jakarta.<br>
+          10. Dana Pensiun HKBP Medan, Medan.<br>
+          11. Yayasan Kesejahteraan Pegawai (YKP) PT Danareksa (Persero), Jakarta.<br>
+          12. Yayasan Dana Pensiun Satya Wacana, Salatiga.<br>
+          13. DPSK Sinode, Salatiga.<br>
+          14. Perbankan.<br>
+          15. Dana Pensiun BPD Bengkulu
+          ">see more</a>          
+        </div>
+        <div class="frame2-2">
+          <img class="imgK2" src="img/image-16.png" />
+          <div class="text-wrapper-SYK2">Lembaga Pendidikan, Rumah Sakit, dan Organisasi Nirlaba</div>
+          <a href="#" class="text-wrapper-SK2 popup-trigger" data-popup-content="
+1. Universitas Muhammadiyah Prof. Dr. Hamka (Uhamka), Jakarta. Perguruan tinggi.<br>
+2. Yayasan Lembaga Pendidikan dan Pengembangan Sumber Daya Keluarga Indonesia Pemalang Jawa Tengah (STIT Pemalang), Pemalang – Jawa Tengah. Perguruan tinggi.<br>
+3. Yayasan Yurino (RS Khusus THT Ciranjang), Jakarta. Rumah sakit.<br>
+4. Yayasan Komite Pemantauan Pelaksanaan Otonomi Daerah (KPPOD), Jakarta.<br>
+5. Perkumpulan Koalisi Perempuan Indonesia untuk Keadilan dan Demokrasi (KPI), Jakarta.<br>
+6. Lembaga Indonesia Aids Coalition (IAC), Jakarta.<br>
+7. Perkumpulan Artikel 33 Indonesia, Jakarta.<br>
+8. Paramadina Public Policy Institute (PPPI), Jakarta.<br>
+9. Yayasan Sosial Indonesia untuk Kemanusiaan (IKA), Jakarta.<br>
+10. The Society Of Indonesian Environmental Journalist (SIEJ), Jakarta.<br>
+11. Yayasan Paramitra, Jawa Timur.<br>
+12. Sekolah Kristen Sinode GKJ dan GKI Jateng, Salatiga<br>
+13. Yayasan Pendidikan Mataram, Semarang<br>
+14. Yayasan Bina Kemaritiman Indonesia (Yasbinmar), Semarang<br>
+15. Yayasan Perguruan Tinggi Karya Husada, Semarang<br>
+16. Dana Sosial Setia Kawan, Semarang<br>
+17. Audit Dana Kampanye Pilpres Capres Drs. HM. Jusuf Kalla – Cawapres H. Wiranto Se-Kabupaten / Kota Yogyakarta.<br>
+18. Audit Dana Kampanye Calon Kepala Daerah dan Wakil Kepala Daerah Kab. Banjarbaru, Kalsel.<br>
+19. PSSI Provinsi Jawa Tengah, Semarang<br>
+20. DPC Partai Demokrat Kota Semarang
+">see more</a>
+        </div>
+        <div class="frame2-3">
+          <img class="imageK2-2" src="img/image-11.png" />
+          <div class="text-wrapper-TK2">Perseroan Terbatas</div>
+          <a href="#" class="text-wrapper-SK2 popup-trigger" data-popup-content="
+          1. PT Pesona Adi Batara, Jakarta. Jasa sewa kendaraan dan properti.<br>
+          2. PT Spinindo Mitradaya, Jakarta. Jasa sewa bangunan pabrik dan properti.<br>
+          3. PT Pentas Cakra Bhakti, Jakarta. Jasa pengelola tenaga kerja.<br>
+          4. PT Rimba Segara Lines. Jasa pelayaran.<br>
+          5. PT Bayu Hutama Jaya, Jakarta. Perdagangan suku cadang peralatan tempur.<br>
+          6. PT Tri Amartha Solusindo, Jakarta. Perdagangan.<br>
+          7. PT Valadoo Indonesia, Jakarta. Jasa tour & travel.<br>
+          8. PT EJJV Consultancy Indonesia, Tangerang. Jasa konsultan manajemen & IT.<br>
+          9. PT Reksa Sentosa Dinamika, Jakarta. Jasa pengelola tenaga kerja.<br>
+          10. PT Pro Emergency, Bogor. Jasa pelatihan bidang kesehatan dan sewa ambulan.<br>
+          11. PT Asï¬ Ilhami Royhan, Tangerang. Jasa pengembangan properti.<br>
+          12. PT Hikmah Samudera Investasi, Jakarta.<br>
+          13. PT Centrum Niaga Bogor, Bogor. Perdagangan bahan bakar gas.<br>
+          14. PT Sera Mega Niyasa, Depok. Perdagangan bahan bakar gas.<br>
+          15. PT Elpindo Karya Utama, Depok. Perdagangan bahan bakar gas.<br>
+          16. PT Karya Putra Sejati, Blora. Perdagangan.<br>
+          17. PT Mitra Medika Utama, Semarang. Perdagangan. Jasa<br>
+          18. PT Metro Plaza, Semarang. Perdagangan dan Jasa.<br>
+          19. PT Untung Jaya, Semarang. Perdagangan.<br>
+          20. PT Laris Candra, Jakarta. Perdagangan.<br>
+          21. PT Summit Indonesia. Perdagangan.<br>
+          22. PT Geromar, Jepara. Industri.<br>
+          23. PT Kawasan Industri Wijaya Kusuma (Persero). Industri.<br>
+          24. PT Buana Intisari Garmen, Ungaran. Industri.<br>
+          25. PT Poliplas Makmur Santosa, Ungaran. Industri barang plastik kemasan.<br>
+          26. PT Poliplas Indah Sejahtera, Ungaran. Industri barang plastik kemasan.<br>
+          27. PT Polidayaguna Perkasa, Ungaran. Industri barang plastik kemasan.<br>
+          28. PT Politama Pakindo, Ungaran. Industri barang plastik kemasan.<br>
+          29. PT South Suco, Makasar. Industri.<br>
+          30. PT Industri Gula Nusantara, Demak. Industri gula.<br>
+          31. PT Java Tohoku Industries, Demak. Industri pengolahan kulit jambu mete dan friction dust.<br>
+          32. PT Rena Djaja, Semarang. Industri moto.<br>
+          33. PT Java Sarana Sejati, Semarang. Jasa.<br>
+          34. PT Radio Swara Carakaria, Semarang. Jasa.<br>
+          35. PT Satura Tour & Travel, Semarang. Jasa.<br>
+          36. PT Bahana Sarana Mandiri, Semarang. Jasa.<br>
+          37. PT Dirga Surya, Semarang. Jasa.<br>
+          38. PT Giantra Wisata, Semarang. Jasa.<br>
+          39. PT Rukun Rahardjo Sedoyo, Semarang. Perbankan.<br>
+          40. PT Bangun Makmur Utama, Semarang. Konstruksi.<br>
+          41. PT Geonika Utama Perdana, Semarang. Konstruksi.<br>
+          42. PT Kambing Rejeki Agung, Semarang. Konstruksi.<br>
+          43. PT Citra Karya Indonesia, Semarang. Konstruksi.<br>
+          44. PT Shangrila Sango, Semarang. Konstruksi.<br>
+          45. PT Unico Utama Jaya, Semarang. Konstruksi.<br>
+          46. PT Indo Niaga Jaya, Semarang. Konstruksi.<br>
+          47. CV Laksana, Semarang. Jasa.<br>
+          48. CV Decorus, Temanggung. Industri.<br>
+          49. Jajang Setiadi Ghani, Semarang. Perdagangan. Jasa Konsultasi
+          ">see more</a>          
+        </div>
+        <div class="frame2-4">
+          <img class="imageK2-3" src="img/image-17.png" />
+          <div class="text-wrapper-ACK2">Koperasi</div>
+          <a href="#" class="text-wrapper-SK2 popup-trigger" data-popup-content="
+1. Koperasi Karyawan Krama Yudha Ratu Motor, Jakarta.<br>
+2. Koperasi Karyawan PT Mandom Indonesia Tbk, Jakarta.<br>
+3. Koperasi Bank BTN Cab. Semarang.<br>
+4. Koperasi Sopir Transportasi Kosti, Semarang.<br>
+5. Koperasi Serba Usaha Murih Raharjo, Semarang.<br>
+6. Koperasi Wanita “Wanita Bhakti”, Semarang.<br>
+7. Kospin Intidana, Semarang.<br>
+8. Koperasi Karyawan “Saka Farma Laboratories”, Semarang.<br>
+9. Koperasi Karyawan “Jasa Pakarti”, Semarang.
+">see more</a>
+        </div>
+        <div class="frame2-5">
+          <img class="imageK2-4" src="img/image-13.png" />
+          <div class="text-wrapper-7K2">Perusahaan Air Minum</div>
+          <a href="#" class="text-wrapper-SK2 popup-trigger" data-popup-content="
+          1. PDAM Tirta Mon Pase  Aceh Utara.<br>
+          2. PDAM Tirta Naga Aceh Selatan.">see more</a>
+        </div>
+        <div class="frame2-6">
+          <img class="imageK2-5" src="img/image-15.png" />
+          <div class="text-wrapper-8K2">Bank Perkreditan Rakyat dan Lembaga Keuangan</div>
+          <a href="#" class="text-wrapper-SK2 popup-trigger" data-popup-content="
+          1. PD. BPR Candiroto, Temanggung<br>
+          2. PD. BPR BKK Doro, Pekalongan<br>
+          3. PD. BPR BKK Kedungwuni, Pekalongan<br>
+          4. PD. BPR BKK Pulokulon, Grobogan<br>
+          5. PT. BPR Swadharma, Weleri<br>
+          6. PD. BPR BKK Pegandon, Kendal<br>
+          7. PD. BPR BKK Ambarawa, Ambarawa<br>
+          8. PT. BPR Bali Budi Kusuma, Kudus<br>
+          9. PD. BPR BKK Bae, Kudus<br>
+          10. PD. BPR BKK Mejobo, Kudus<br>
+          11. PT. BPR Kawicentra Artha, Ambarawa<br>
+          12. PT. BPR Kusuma Palagan, Ambarawa<br>
+          13. PT. BPR Restu Klepu Makmur, Kab Semarang<br>
+          14. PD. BPR Dati II KabupatenPati<br>
+          15. PT. BPR Dana Tani, Cepiring, Kendal<br>
+          16. PT. BPR Citra Darian, Kendal<br>
+          17. PD. BPR BKK Gemuh, Kendal<br>
+          18. PD. BPR. Bank Pasar Magelang<br>
+          19. PT. BPR Arthama Cerah, Kendal<br>
+          20. PD. BPR BKK Toroh, Grobogan<br>
+          21. PD. BPR BKK Gabus Purwodadi, Grobogan<br>
+          22. PT. BPR WirosariIjo, Grobogan<br>
+          23. PD. BPR Pasar Magelang<br>
+          24. PT. BPR Pasar Pati, Pati<br>
+          25. PT. BPR Dana Tani Cepiring, Kendal<br>
+          26. PD. BPR Bank Daerah Pati<br>
+          27. PT. BPR Weleri Makmur, Semarang<br>
+          28. PT. BPR Surya Yudhakencana, Wonosobo<br>
+          29. PT. BPR Gunung Selamet, Cilacap<br>
+          30. PT. BPR Artha Huda, Pati<br>
+          31. PT. BPR Taruna Adidaya Santosa, Kudus<br>
+          32. PT. BPR Gunung Simping Artha, Banjarnegara<br>
+          33. PT. BPR Gunung Merbabu, Semarang<br>
+          34. PD. BPR BKK Blora Kota, Blora<br>
+          35. PD. BPR Bank Tegal Gotong Royong, Tegal<br>
+          36. PT. BPR Banyu Arthacitra, Cilacap<br>
+          37. Kop. BPR WedariJaksa, Pati<br>
+          38. PT. BPR Kroya Bangun Artha, Cilacap<br>
+          39. PT. BPR Semarang Margatama, Semarang<br>
+          40. PT BPR Artha Mranggen Jaya, Demak<br>
+          41. PD. BPR Bank Pasar Kab. Dati II Rembang<br>
+          42. BKM Pandai Usaha, Semarang<br>
+          43. LKM Kab. Banjar, Kalimantan Selatan<br>
+          44. LKM Kab. Banjarbaru, Kalimantan Selatan<br>
+          45. LKM Kab. Tabalong, Kalimantan Selatan<br>
+          46. LKM Kab. Hulu Sungai Utara, Kalimantan Selatan<br>
+          47. LKM kab. Hulu Sungai Selatan, Kalimantan Selatan<br>
+          48. BKM Kab. Tanah Laut, Kalimantan Selatan
+          ">see more</a>          
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup" id="popup">
+        <span class="close" id="closePopup">&times;</span>
+        <div class="popup-content" id="popupContent">
+          <!-- Content will be updated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="kolom">
+        <p class="div-2">
+          <span class="text-wrapper">
+            Kantor Pusat:<br />Jl. Puter III Blok ED4 Nomor 19 Sektor V Bintaro Jaya, Jurangmangu Timur, Pondok Aren, Tangerang Selatan 15222<br />
+          </span>
+          <a href="https://maps.app.goo.gl/cLjwrfugA6y8JQRe9" class="span">View maps<br /><br /></a>
+          <span class="text-wrapper">
+            Kantor Cabang:<br />Jl. Gemah Jaya II No. 345, Kinijaya, Kel. Kedungmundu, Kec. Tembalang, Kota Semarang, Jawa Tengah 50273<br />
+          </span>
+          <a href="https://g.co/kgs/7yzBBp6" class="span">View maps<br /><br /></a>
+        </p>
+        <div class="text-wrapper-2">Location</div>
+      </div>
+      <div class="kolom-2">
+        <p class="kontakkantor">
+          Kantor Pusat<br />Telp: 021-734 93047<br />Email: kaptby1@gmail.com<br /><br />
+          Kantor Cabang<br />Telp: 021-734 93047<br />Email: kaptby1@gmail.com
+        </p>
+        <div class="contact">Contact Kami</div>
+      </div>
+      <div class="kolom-3">
+        <div class="div-2">
+          <a href="about.html" style="color: black; text-decoration: none;">Tentang Kami</a><br />
+          <a href="partner.html" style="color: black; text-decoration: none;">Partner</a><br />
+          <a href="jasa.html" style="color: black; text-decoration: none;">Jasa</a><br />
+          <a href="klien.html" style="color: black; text-decoration: none;">Klien</a><br />
+          <a href="index.html#contact-section" style="color: black; text-decoration: none;">Kontak Kami</a>
+        </div>
+        <div class="KAP">
+          <a href="index.html" style="color: black; text-decoration: none;">KAP Tri Bowo Yulianti</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

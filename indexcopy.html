@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleS.css" />
+</head>
+<body>
+    <header class="header">
+        <img class="KAP-TBY-logo-kop" src="img/kap-tby-logo-kop-surat-1.png" />
+        <div class="navbar" id="navbar">
+          <a href="#" class="menu-item">Beranda</a>
+          <a href="#" class="menu-item">Tentang Kami</a>
+          <a href="#" class="menu-item">Partner</a>
+          <a href="#" class="menu-item">Jasa</a>
+          <a href="#" class="menu-item">Klien</a>
+          <a href="#" class="menu-item">Contact Kami</a>
+        </div>
+        <!-- Icon hamburger menu -->
+        <div class="icon" onclick="toggleMenu()">
+          &#9776;
+        </div>
+      </header>
+      
+      <script>
+        // Script untuk mengaktifkan menu responsif saat di layar kecil
+        function toggleMenu() {
+          var navbar = document.getElementById("navbar");
+          if (navbar.className === "navbar") {
+            navbar.className += " responsive";
+          } else {
+            navbar.className = "navbar";
+          }
+        }
+      </script>
+        
+      <!-- Menggunakan Font Awesome untuk ikon hamburger menu -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+
+    
+
+    <footer class="footer">
+        <div class="overlap-group">
+            <div class="column">
+                <div class="text-wrapper-5">KAP Tri Bowo Yulianti</div>
+                <div class="tentang-kami-partner">
+                  <p>Tentang Kami</p>
+                  <p>Partner</p>
+                  <p>Jasa</p>
+                  <p>Klien</p>
+                  <p>Kontak Kami</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="text-wrapper-6">Contact Kami</div>
+                <div class="text-wrapper-2">
+                  Kantor Pusat<br />
+                  Telp: 021-734 93047<br />
+                  Email: kaptby1@gmail.com
+                </div>
+                <div class="text-wrapper-2">
+                  Kantor Cabang<br />
+                  Telp: 021-734 93047<br />
+                  Email: kaptby1@gmail.com
+                </div>
+            </div>
+            <div class="column">
+                <div class="location">
+                    <div class="text-wrapper-4">Location</div>
+                    <div class="text-wrapper">
+                      Kantor Pusat:<br />
+                      Jl. Puter III Blok ED4 Nomor 19 Sektor V Bintaro Jaya, Jurangmangu Timur, Pondok
+                      Aren, Tangerang Selatan 15222<br />
+                      <span class="span">View maps</span><br /><br />
+                    </div>
+                    <div class="text-wrapper">
+                      Kantor Cabang:<br />
+                      Jl. Gemah Jaya II No. 345, Kinijaya, Kel. Kedungmundu, Kec. Tembalang, Kota
+                      Semarang, Jawa Tengah 50273<br />
+                      <span class="span">View maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Font family default */
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    background-color: #fffefc;
+    box-shadow: 0px 4px 5px #00000005;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.navbar .menu-item {
+    font-family: "DM Serif Display", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 16px;
+    white-space: nowrap;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.KAP-TBY-logo-kop {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Styling for hamburger menu icon */
+.icon {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #000; /* Warna ikon hitam */
+    font-size: 24px;
+}
+
+.footer {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+    margin-top: 100px; /* Add space after content */
+}
+
+.overlap-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+.text-wrapper-5, .text-wrapper-6, .text-wrapper-4 {
+    font-family: "DM Serif Display", Helvetica;
+    font-weight: 400;
+    color: #404040;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.tentang-kami-partner, .text-wrapper-2, .text-wrapper {
+    font-family: "Jost", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.column:first-child {
+    padding-left: 20px; /* Add padding to the left for the first column */
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none; /* Menyembunyikan menu utama pada mode kecil */
+    }
+
+    .header {
+        height: 70px; /* Mengurangi tinggi header untuk mode kecil */
+    }
+
+    .KAP-TBY-logo-kop {
+        width: 150px; /* Mengurangi ukuran logo untuk mode kecil */
+    }
+
+    .icon {
+        display: block; /* Menampilkan ikon hamburger menu pada mode kecil */
+    }
+
+    .navbar.responsive {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #fffefc;
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar.responsive .menu-item {
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: 1px solid #ddd; /* Garis pemisah antar menu */
+    }
+
+    .footer .overlap-group {
+        flex-direction: column; /* Mengubah ke tata letak kolom pada layar kecil */
+        align-items: center; /* Pusatkan konten footer pada layar kecil */
+    }
+
+    .column {
+        flex-basis: 100%; /* Mengubah ke lebar penuh pada layar kecil */
+        text-align: left; /* Tetap rata kiri pada layar kecil */
+        padding-left: 20px; /* Jaga jarak dari kiri */
+    }
+}
