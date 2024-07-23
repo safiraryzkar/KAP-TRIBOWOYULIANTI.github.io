@@ -1,5 +1,3 @@
-[submodule "KAP-TRIBOWOYULIANTI.github.io"]
-    path = KAP-TRIBOWOYULIANTI.github.io
+[submodule "KAP-TRIBOWOYULIANTI"]
+    path = KAP-TRIBOWOYULIANTI
     url = https://github.com/safiraryzkar/KAP-TRIBOWOYULIANTI.github.io.git
-
-
